@@ -1,28 +1,31 @@
 package pack;
 
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class ProductManagerImpl implements ProductManager{
 
-    private Queue<Product> products= null;
+    private ProductManagerImpl instance;
+    private Queue<Pedido> colaPedidos;
 
     private ProductManagerImpl() {
-        //products = new Q
+        colaPedidos = new PriorityQueue<>();
     }
 
     //singleton
     public ProductManagerImpl getInstance(){
+        if(instance==null) instance = new ProductManagerImpl();
+        return instance;
+    }
+
+    @Override
+    public <Product> sortByPrice() {
 
     }
 
     @Override
-    public void sortByPrice() {
-
-    }
-
-    @Override
-    public void sortBySells() {
+    public <Product>  sortBySells() {
 
     }
 
@@ -32,7 +35,7 @@ public class ProductManagerImpl implements ProductManager{
     }
 
     @Override
-    public void realizarPedido() {
+    public void realizarPedido( Product) {
 
     }
 }
