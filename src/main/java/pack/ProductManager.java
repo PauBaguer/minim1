@@ -7,7 +7,9 @@ public interface ProductManager {
 
     List<Product> sortBySells();
 
-    void filterDone();
+    void realizarPedido(Pedido p);
 
-    void realizarPedido(Pedido);
+    void servirPedido();
+
+    List<Pedido> pedidosDeUsuario(Usuario u);
 }
